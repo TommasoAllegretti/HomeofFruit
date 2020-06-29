@@ -1,37 +1,143 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
 body {
   margin: 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0;
+  width: 100%;
+  font-family: sans-serif;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+
+/* ---------- NAVBAR ---------- */
+
+.nav {
+  border-bottom: 1px solid #EAEAEB;
+  text-align: left;
+  height: 110px;
+  line-height: 103px;
+}
+
+.menu a {
+  clear: right;
+  text-decoration: none;
+  color: white;
+  padding: 50px;
+}
+
+.menu a:hover {
+  color: black;
+  background-color: white !important;
+}
+
+label {
+  margin: 0 40px 0 0;
+  font-size: 26px;
+  line-height: 60px;
+  display: none;
+  width: 26px;
+  float: right;
+}
+#toggle {
+  display: none;
+}
+
+/* BARBER POLE */
+
+@-webkit-keyframes MOVE-BG {
+	from {
+		-webkit-transform: translateX(0);
+	}
+	to { 
+		-webkit-transform: translateX(46px);
+	}
+}
+
+@keyframes MOVE-BG {
+	from {
+		transform: translateX(0);
+	}
+	to { 
+		transform: translateX(46px);
+	}
+}
+
+.bg{
+    opacity: 90%;
+    position: absolute;
+    width: auto;
+    height: 110px;
+    left: 600px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+	
+    background: -webkit-repeating-linear-gradient(
+      145deg,
+      #EE3239 2px,
+      #5EAA5F 4px,
+      #FECE00 22px,
+      #9D6AB9 24px,
+      #9D6AB9 40px
+    );
+    background: repeating-linear-gradient(
+      -55deg,
+      #EE3239 2px,
+      #5EAA5F 4px,
+      #FECE00 22px,
+      #9D6AB9 24px,
+      #EE3239 40px
+    );
+  
+
+  /* ANIMATION */
+  /*-webkit-animation-name: MOVE-BG;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	
+    animation-name: MOVE-BG;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;*/
+}
+
+
+
+/* ---------- MOBILE ---------- */
+
+@media only screen and (max-width: 700px) {
+  label {
+      display: block;
+      cursor: pointer;
+  }
+  .menu {
+      text-align: center;
+      width: 100%;
+      display: none;
+  }
+  .menu a {
+      display: block;
+      margin: 0;
+      padding: 30px;
+      font-size: 25px;
+  }
+  
+  #toggle:checked + .menu {
+      display: block;
+  }
+  
+  .nav{
+    height: 60px;
   }
 
-li {
-    float: left;
-    
+  .bg{
+    left: -50px;
+    height: 60px;
+    width: auto;
   }
-
-li a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    padding: 30px 50px;
-    color: white;
-}
-
-li a:hover {
-    background-color: #111;
-}
-
-.hamburger {
-    color: white;
-    display: none;
-}
-
-@media screen and (max-width: 800px) {
+  
 }
